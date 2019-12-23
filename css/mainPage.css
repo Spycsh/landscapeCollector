@@ -1,0 +1,43 @@
+.recordItem{
+    width:200px;
+}
+
+.recordList>li {
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin: 0 10px 20px 10px;
+    border: 3px solid #414141;
+    padding: 20px;
+    list-style: none;
+
+
+
+}
+.recordImage{
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+}
+/* 
+* {
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+} */
+
+
+/* .recordList {
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    width: 1280px;
+    opacity: 0;
+    transition: opacity .4s;
+} */
