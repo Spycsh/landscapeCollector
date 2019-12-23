@@ -37,6 +37,10 @@
 
     if($message == "upload successfully"||$message=="Not upload"){
         // $conn->query($registerSQL);
+        //登陆成功则保存信息
+        session_start();
+        $_SESSION['userName'] = $userName;
+
         $stmt->execute();
         $userID = mysqli_insert_id($conn);
         // $userID = $conn->insert_id();

@@ -5,7 +5,15 @@
         <link href="css/mainPage.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-
+        <?php
+        // verify if the user has login
+        session_start();
+        // echo($_SESSION['userName']);
+        if(!isset($_SESSION['userName'])){
+            header("Location:login_process.php");
+            exit();
+        }
+        ?>
         <ul class="recordList">
             <li class="recordItem">
                 <div class="recordImage" style="background-image: url(css/img/1.jpg);">
