@@ -1,4 +1,5 @@
 // 用到jquery
+
 var stars = $(".star_score")[0].children;
 for(var i=0;i<stars.length;i++){
     stars[i].addEventListener("mouseover",function(){
