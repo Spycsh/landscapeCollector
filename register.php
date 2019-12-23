@@ -27,8 +27,9 @@
     // upload picture name
     $myPictureName = $_FILES['myPicture']['name'];
     // $registerSQL = "insert into user values(null, '$userName', '$password', '$myPictureName')";
+    $passwordMD5 = md5($password);
     $stmt = $conn->prepare("INSERT INTO user (name,password, image) VALUES(?, ?, ?)");
-    $stmt->bind_param("sss", $userName, $password, $myPictureName);
+    $stmt->bind_param("sss", $userName, $passwordMD5, $myPictureName);
     // $stmt->execute();
 
 
