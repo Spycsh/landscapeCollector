@@ -5,6 +5,8 @@
 */
 session_start();
 unset($_SESSION['userName']);
-header("Location:login_process.php");
+// session_destroy();
+// header("Location:login_process.php");
+header("Location:index.html");
 exit();
 ?>

@@ -1,23 +1,31 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <title>login</title>
 </head>
 
 <body>
-    <form action="login_process.php" method="POST">
-        LOGIN<br>
-        user Name
-        <input type="text" name="userName" size="20" maxlength="15" placeholder="Pleas enter your username">
-        <br>
-        password
-        <input type="password" name="password" size="20" maxlength="15" placeholder="Please enter your password">
-        <br>
-        <input type="submit" value="Login">
+    <div id="main">
+        <form action="login_process.php" method="POST">
+            LOGIN<br>
+            
+            <i class="fa fa-user"></i>
 
-        <input type="button" onclick="window.location.href='register.html'" value="register">
+            <input type="text" class="inputBox" name="userName" size="20" maxlength="15" placeholder="Pleas enter your username" required>
+            <br>
+            
+            <i class="fa fa-key"></i>
+            <input type="password" class="inputBox" name="password" size="20" maxlength="15" placeholder="Please enter your password" required>
+            <br>
+            <input type="submit" value="Login">
 
-    </form>
+            <input type="button" onclick="window.location.href='register.html'" value="register">
+
+        </form>        
+    </div>
+
 </body>
 
 

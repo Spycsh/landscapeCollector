@@ -1,24 +1,41 @@
-<h2>Register</h2>
-<hr>
-<form action="register.php" method="POST" enctype="multipart/form-data"> <!--upload for file type need to use enctype-->
-    User Name:
-    <input type="text" name="userName" size="20" maxlength="15" placeholder="User Name">
-    <br>
-    
-    Password:
-    <input type="password" name="password" size="20" maxlength="15" placeholder="password">
-    <br>
+<html>
 
-    Confirm Password:
-    <input type="password" name="confirmPassword" size="20" maxlength="15">
-    <br>
+<head>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
 
-    Portrait:
-    <!-- 小于2MB -->
-    <input type="hidden" name="MAX_FILE_SIZE" value="2000000"> 
-    <input type="file" name="myPicture" size="25" maxlength="100">
-    <br>
+<body>
+    <div id="main">
+        
+        <form action="controller/RegisterController.php" method="POST" enctype="multipart/form-data">
+            <!--upload for file type need to use enctype-->
+            <h2>Register</h2>
+            <hr>
+            <span><i class="fa fa-user"></i>User Name:</span>
+            <input class="inputBox" type="text" name="userName" size="20" maxlength="15" placeholder="User Name" required>
+            <br>
 
-    <input type="submit" name="submit" value="register">
-    <input type="reset" name="cancel" value="reset">
-</form>
+            <span><i class="fa fa-key"></i>Password:</span>
+            <input class="inputBox" type="password" name="password" size="20" maxlength="15" placeholder="password" required>
+            <br>
+
+            <span><i class="fa fa-key"></i>Confirm Password:</span>
+            <input class="inputBox" type="password" name="confirmPassword" size="20" maxlength="15"
+                placeholder="Confirm password" required>
+            <br>
+
+            <span><i class="fa fa-camera-retro"></i>Portrait:</span>
+            <!-- 小于2MB -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+            <input type="file" name="myPicture" size="25" maxlength="100">
+            <br>
+
+            <input type="submit" name="submit" value="register">
+            <input type="reset" name="cancel" value="reset">
+        </form>
+    </div>
+
+</body>
+
+</html>
