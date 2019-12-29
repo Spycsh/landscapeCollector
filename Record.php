@@ -7,6 +7,7 @@ class Record {
     private $user;
     private $star;
     private $userID;
+    private $recordID;
     
     function __construct( $cou, $city,$pic,$comment,$user,$star ) {
         $this->country = $cou;
@@ -15,6 +16,14 @@ class Record {
         $this->comment = $comment;
         $this->user = $user;
         $this->star = $star;
+    }
+    
+    function getRecordID(){
+        return $this->recordID;
+    }
+    
+    function setRecordID($id){
+        $this->recordID = $id;
     }
     
     function getUserID(){
