@@ -105,7 +105,7 @@
 
 		<!-- change to current page, for the first time just change to first page -->
             <?php
-            session_start();
+            // session_start();
             if (! isset($_SESSION['curPageNum'])) {
                 $_SESSION['curPageNum'] = 1;
             }
@@ -146,21 +146,21 @@
 	<nav id="page-nav" class="show">
 		<!-- <span class="page-number current">1</span> -->
             <?php
-            require_once "../controller/DBController.php";
-            $db = new DBController();
-            $db->connect();
-            $pageNum = $db->getPageNum();
+            // require_once "../controller/DBController.php";
+            // $db = new DBController();
+            // $db->connect();
+            // $pageNum = $db->getPageNum();
 
-            $db->disconnect();
-            for ($i = 1; $i <= $pageNum; $i ++) {
-                echo "<a class='page-number' onclick=changePage($i)>$i</a>";
-            }
+            // $db->disconnect();
+            // for ($i = 1; $i <= $pageNum; $i ++) {
+            //     echo "<a class='page-number' onclick=changePage($i)>$i</a>";
+            // }
             ?>
             <!-- <a class="page-number" onclick=changePage(1)>1</a>
 
             <a class="page-number" onclick=changePage(2)>2</a>
             <a class="page-number" onclick=changePage(3)>3</a> -->
-		<a class="extend next" rel="next" href="/page/2/">Next</a>
+		<!-- <a class="extend next" rel="next" href="/page/2/">Next</a> -->
 	</nav>
 	</main>
 </body>

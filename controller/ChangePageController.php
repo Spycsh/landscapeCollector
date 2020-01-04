@@ -17,6 +17,10 @@ class ChangePageController
         // the records which fulfill the requirements
         $records = $this->db->searchRecordsByPage($pageNum);
 
+        $ourArray = array();
+        $recordHTML = "";
+        $navHTML = "";
+
         // echo count($records);
         for ($i = 0; $i < count($records); $i ++) {
 
@@ -53,8 +57,7 @@ class ChangePageController
             // echo($name);
             // echo($userProfile);
 
-            // output the shortened results
-            echo "      <li class='post-item grid-item' >
+            $recordHTML .= "      <li class='post-item grid-item' >
                                 <a class='post-link' onclick=showRecord($idrecord)>
                                     <div class='recordImage' style='background-image: url($pictureURL);'>
                                     </div>
@@ -72,7 +75,36 @@ class ChangePageController
 
                                 </li>
                         ";
+            
+            
+
         }
+        $ourArray["recordHTML"] = $recordHTML;
+        
+
+        $AllPagesNum = $this->db->getPageNum();
+        // set the navigation section html
+        // should be like [1]...[3][4][5][6][7]...[10]
+        // [1] is the first page, [10] is the last page, [5] is the current page
+        for($j=1;$j<=$AllPagesNum;$j++){           
+            // if the page is not current page then emphasize it
+            if($j==$pageNum){
+                $navHTML .= "<span class='page-number current'>$j</span>";
+
+            } 
+            else if(($j>=$pageNum-2&& $j<=$pageNum+2)||$j==1||$j==$AllPagesNum){ 
+                $navHTML .= "<a class='page-number' onclick=changePage($j)>$j</a>";
+
+            }
+            else {
+                $navHTML .= "...";
+
+            }
+        }
+    
+        $ourArray["navHTML"] = $navHTML;
+
+        echo json_encode($ourArray);
     }
 }
 
@@ -84,6 +116,7 @@ $pageNum = $_POST['content'];
 session_start();
 $_SESSION['curPageNum'] = $pageNum;
 
+
 $cpc = new ChangePageController();
 $cpc->db = new DBController();
 $cpc->db->connect();
@@ -92,6 +125,8 @@ $cpc->db->connect();
 // $rc->displayUserInfo($rc->registerID);
 
 $cpc->changePage($pageNum);
+
+
 
 $cpc->db->disconnect();
 

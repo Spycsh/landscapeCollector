@@ -81,7 +81,20 @@ class SearchController
 
         $navInfo = "";
         for ($k = 1; $k <= ceil(count($allRecords) / 6); $k ++) {
-            $navInfo .= "<a class='page-number' onclick='searchByPage($k)'>$k</a>";
+            // if the page is not current page then emphasize it
+            if($k==$pageNum){
+                $navInfo .= "<span class='page-number current'>$k</span>";
+
+            } 
+            else if(($k>=$pageNum-2&& $k<=$pageNum+2)||$k==1||$k==$AllPagesNum){ 
+                $navInfo .= "<a class='page-number' onclick=changePage($k)>$k</a>";
+
+            }
+            else {
+                $navInfo .= "...";
+
+            }
+            // $navInfo .= "<a class='page-number' onclick='searchByPage($k)'>$k</a>";
         }
 
         $outArray["navInfo"] = $navInfo;
