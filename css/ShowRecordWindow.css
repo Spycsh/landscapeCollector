@@ -1,0 +1,77 @@
+@charset "utf-8";
+.curProfile{
+    float:left;
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.curUserName{
+	 float:left;
+}
+
+#edit{
+	float: right;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+#delete{
+	float: right; 
+	margin-right:10px;
+	margin-left:10px;
+}
+
+#content{
+	
+	margin: 0 auto;
+	width: 500px;
+	margin-top:100px;
+	margin-bottom: 200px;
+}
+
+#location{
+	margin-bottom:20px;
+	border:1px solid #a5b6c8;
+	background:#eef3f7;
+}
+
+#userInfo{
+	height:80px;
+	width:500px;
+	
+}
+
+.curUserName{
+	margin-left:20px;
+}
+
+.recordImage{
+	
+	width : 500px;
+}
+
+#image{
+	width : 500px;
+	border:1px solid #a5b6c8;
+	background:#eef3f7;
+}
+
+#record{
+	width:500px;
+}
+
+
+
+#comment{
+	margin-top:30px;
+	border:1px solid #a5b6c8;
+	background:#eef3f7;
+}
+
+p{
+	margin-top:10px;
+	margin-left:10px;
+	margin-bottom: 10px;
+	margin-right:10px;
+}
