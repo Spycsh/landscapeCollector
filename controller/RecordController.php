@@ -78,11 +78,28 @@ if (! empty($_POST["create_country"])) {
     </script>";
         $_POST["create_star"] = 5;
     }
+    $country=$_POST["create_country"];
+    $country=strtolower($country);
+    $country=ucfirst($country);
     
-    $crc->createRecord($_POST["create_country"], $_POST["create_city"], $_FILES["create_picture"]["name"], $_POST["create_comment"], $_POST["create_star"]);
+    $city=$_POST["create_city"];
+    $city=strtolower($city);
+    $city=ucfirst($city);
+    
+    $crc->createRecord($country, $city, $_FILES["create_picture"]["name"], $_POST["create_comment"], $_POST["create_star"]);
+//     $crc->createRecord($_POST["create_country"], $_POST["create_city"], $_FILES["create_picture"]["name"], $_POST["create_comment"], $_POST["create_star"]);
 }
 // when post variable from edit page is not empty
 if (! empty($_POST["edit_country"])) {
-    $crc->editRecord($_POST["edit_country"], $_POST["edit_city"], $_FILES["edit_picture"]["name"], $_POST["edit_comment"], $_POST["edit_star"], $_POST["edit_id"]);
+    $country=$_POST["edit_country"];
+    $country=strtolower($country);
+    $country=ucfirst($country);
+    
+    $city= $_POST["edit_city"];
+    $city=strtolower($city);
+    $city=ucfirst($city);
+    
+    $crc->editRecord($country, $city, $_FILES["edit_picture"]["name"], $_POST["edit_comment"], $_POST["edit_star"], $_POST["edit_id"]);
+//     $crc->editRecord($_POST["edit_country"], $_POST["edit_city"], $_FILES["edit_picture"]["name"], $_POST["edit_comment"], $_POST["edit_star"], $_POST["edit_id"]);
 }
 ?>
