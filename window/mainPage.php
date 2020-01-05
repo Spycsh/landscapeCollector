@@ -143,6 +143,7 @@
 
 
 	</ul>
+
 	<nav id="page-nav" class="show">
 		<!-- <span class="page-number current">1</span> -->
             <?php

@@ -87,6 +87,18 @@ class RecordController
 
 $crc = new RecordController();
 
+if(empty($_POST["create_star"])){
+    echo "<script>
+    var del=confirm('You have not set the recommendation star? You will by default give 5 stars to your landscape~');
+    if(del==true){
+         
+    }else{
+        window.location.href = '../window/createRecordWindow.php';
+    }
+    </script>";
+    $_POST["create_star"] = 5;
+}
+
 // when post variable from create page is not empty
 if (! empty($_POST["create_country"])) {
 

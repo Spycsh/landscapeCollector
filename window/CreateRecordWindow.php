@@ -36,11 +36,13 @@ if (! isset($_SESSION['userName'])) {
 			<form method="post" action="../controller/RecordController.php"
 				enctype="multipart/form-data">
 
-				<label>country: </label> <input type="text" name="create_country"> <br>
-				<label>city: </label> <input type="text" name="create_city"> <br> <label>click
-					button to choose your picture</label> <br> <input type="hidden"
-					name="MAX_FILE_SIZE" value="2000000"> <input type="file"
-					name="create_picture" id="chooseImage" size="25" maxlength="100"> <br>
+				<label>country: </label> <input type="text" name="create_country" required> <br>
+				<label>city: </label> <input type="text" name="create_city" required> <br> 
+				<label>click button to choose your picture</label>
+					 <br> 
+					<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+					 <input type="file"
+					name="create_picture" id="chooseImage" size="25" maxlength="100" required> <br>
 
 
 
@@ -58,7 +60,7 @@ if (! isset($_SESSION['userName'])) {
 
 				<div id="starDiv">
 					<label>recommendation:</label> <input type="hidden" value=""
-						name="create_star" id="star"> <span class="starScore"> <span
+						name="create_star" id="star" required> <span class="starScore"> <span
 						title="1" id="1" class></span> <span title="2" id="2" class></span>
 						<span title="3" id="3" class></span> <span title="4" id="4" class></span>
 						<span title="5" id="5" class></span>

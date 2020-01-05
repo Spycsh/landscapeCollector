@@ -80,21 +80,38 @@ class SearchController
         $outArray["content"] = $outputStr;
 
         $navInfo = "";
-        for ($k = 1; $k <= ceil(count($allRecords) / 6); $k ++) {
+        $leftOmitFlag = false;
+        $rightOmitFlag = false;
+        $AllPagesNum = ceil(count($allRecords) / 6);
+        
+        if($pageNum!=1){
+            $prevPage = $pageNum -1;
+            $navInfo .= "<a class='extend prev' rel='prev' onclick=searchByPage($prevPage)>Prev</a>";
+        }
+
+        for ($k = 1; $k <= $AllPagesNum; $k ++) {
             // if the page is not current page then emphasize it
             if($k==$pageNum){
                 $navInfo .= "<span class='page-number current'>$k</span>";
 
             } 
-            else if(($k>=$pageNum-2&& $k<=$pageNum+2)||$k==1||$k==$AllPagesNum){ 
-                $navInfo .= "<a class='page-number' onclick=changePage($k)>$k</a>";
-
+            else if(($k>=$pageNum-1&& $k<=$pageNum+1)||$k==1||$k==$AllPagesNum){ 
+                $navInfo .= "<a class='page-number' onclick=searchByPage($k)>$k</a>";
             }
-            else {
+            else if(!$leftOmitFlag&&$k<$pageNum){
                 $navInfo .= "...";
-
+                $leftOmitFlag = true;
+            }
+            else if(!$rightOmitFlag&&$k>$pageNum){
+                $navInfo .= "...";
+                $rightOmitFlag = true;
             }
             // $navInfo .= "<a class='page-number' onclick='searchByPage($k)'>$k</a>";
+        }
+
+        if(($pageNum!=$AllPagesNum)&&$AllPagesNum!=1&&$AllPagesNum!=0){
+            $nextPage = $pageNum +1;
+            $navInfo .= "<a class='extend next' rel='next' onclick=searchByPage($nextPage)>Next</a>";
         }
 
         $outArray["navInfo"] = $navInfo;
