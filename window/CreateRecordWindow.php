@@ -4,8 +4,10 @@
 	content="width=device-width, initial-scale=1.0">
 <title>create your record</title>
 <head>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
 <link href="../css/CreateRecordWindow.css" rel="stylesheet" type="text/css" />
 <script src="../js/createValidation.js" type="text/javascript"></script>
+<script src="../js/back.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -27,10 +29,10 @@ if (! isset($_SESSION['userName'])) {
 }
 ?>
     <header id="header" class="site-header">
-    <div class='logoDiv'>
+    <div class='logoDiv' onclick=back()>
 		<img id="logo" src = '../css/img/logo.png'></img>
 	</div>
-	<div class='caption'>
+	<div class='caption' onclick=back()>
 		<h1 id="caption">LANDSCAPE COLLECTOR</h1>
 	</div>
 		<button id="logout" title="log out"

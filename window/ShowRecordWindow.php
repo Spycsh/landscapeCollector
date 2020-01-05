@@ -11,6 +11,10 @@
 <script src="../js/back.js"></script>
     <?php
 
+    require_once "../controller/DBController.php";
+    $db = new DBController();
+    $db->connect();
+
     // verify if the user has login
     session_start();
 
@@ -28,11 +32,38 @@
     <head>
 <meta charset="utf-8">
 <title>details of the record</title>
+<link href="../css/style.css" rel="stylesheet"
+    type="text/css" />
 <link href="../css/ShowRecordWindow.css" rel="stylesheet"
-	type="text/css" />
+    type="text/css" />
+
 <link rel="stylesheet" href="../css/font-awesome.min.css">
 </head>
 <body>
+    <header id="header" class="site-header">
+    <div class='logoDiv' onclick=back()>
+		<img id="logo" src = '../css/img/logo.png'></img>
+	</div>
+	<div class='caption' onclick=back()>
+		<h1 id="caption">LANDSCAPE COLLECTOR</h1>
+	</div>
+		<button id="logout" title="log out"
+			onclick="location.href='../controller/logout.php'"></button>
+		<span class="space"></span>
+        <?php
+        // get profile of current user
+        $curID = $_SESSION['userID'];
+        $curUser = $db->getUserInfoById($curID);
+        if ($curUser['image'] != '') {
+            $userProfileURL = '../uploads/userProfile/' . $curUser['image'];
+        } else {
+            $userProfileURL = '../uploads/userProfile/' . "default.jpg";
+        }
+        $db->disconnect();
+        echo "<img src=$userProfileURL class='curProfile'></img>"?>
+        
+        
+    </header>
 
 	<div id="content">
 		<div id="userInfo">
@@ -74,7 +105,7 @@
 
     $db->disconnect();
 
-    echo "<img src=$userProfileURL class='curProfile'></img>";
+    echo "<img src=$userProfileURL class='recordProfile'></img>";
     echo "<p class = 'curUserName'>" . $curUser['name'] . "</p>";
     
     echo "<i class='fa fa-arrow-circle-left fa-lg' id='back' onclick=back() aria-hidden='true'></i>";

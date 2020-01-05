@@ -15,6 +15,7 @@
 <script src="../js/search.js"></script>
 <script src="../js/changePage.js"></script>
 <script src="../js/showRecord.js"></script>
+<script src="../js/back.js" type="text/javascript"></script>
 
 </head>
 
@@ -42,10 +43,10 @@
     
 
     <header id="header" class="site-header">
-    <div class='logoDiv'>
+    <div class='logoDiv' onclick=back()>
 		<img id="logo" src = '../css/img/logo.png'></img>
 	</div>
-	<div class='caption'>
+	<div class='caption' onclick=back()>
 		<h1 id="caption">LANDSCAPE COLLECTOR</h1>
 	</div>
 		<button id="logout" title="log out"

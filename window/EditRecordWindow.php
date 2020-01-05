@@ -7,13 +7,18 @@
 <head>
 <meta charset="utf-8">
 <title>edit your record</title>
+<link href="../css/style.css" rel="stylesheet"
+    type="text/css" />
 <link href="../css/CreateRecordWindow.css" rel="stylesheet"
 	type="text/css" />
 	<script src="../js/back.js"></script>
 </head>
-<body>
 
 <?php
+
+require_once "../controller/DBController.php";
+$db = new DBController();
+$db->connect();
 
 // verify if the user has login
 session_start();
@@ -42,10 +47,35 @@ $record = $rc->selectRecord($recordID);
 ?>
 
 
+<body>
+			<header id="header" class="site-header">
+			<div class='logoDiv' onclick=back()>
+				<img id="logo" src = '../css/img/logo.png'></img>
+			</div>
+			<div class='caption' onclick=back()>
+				<h1 id="caption">LANDSCAPE COLLECTOR</h1>
+			</div>
+				<button id="logout" title="log out"
+					onclick="location.href='../controller/logout.php'"></button>
+				<span class="space"></span>
+				<?php
+				// get profile of current user
+				$curID = $_SESSION['userID'];
+				$curUser = $db->getUserInfoById($curID);
+				if ($curUser['image'] != '') {
+					$userProfileURL = '../uploads/userProfile/' . $curUser['image'];
+				} else {
+					$userProfileURL = '../uploads/userProfile/' . "default.jpg";
+				}
+				$db->disconnect();
+				echo "<img src=$userProfileURL class='curProfile'></img>"?>
+				
+				
+		</header>
 <div id="content">
 
-		<h1>Share your Landscape!</h1>
-		<i class='fa fa-arrow-circle-left fa-lg' id='back' onclick=back() aria-hidden='true'></i>
+		<!-- <h1>Edit your Landscape!</h1> -->
+		<!-- <button><i class='fa fa-arrow-circle-left fa-lg' id='back' onclick=back() aria-hidden='true'></i></button> -->
 		<div id="main">
 
 

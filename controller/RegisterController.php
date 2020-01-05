@@ -16,8 +16,10 @@ class RegisterController
     //create a user
     function createUser($name, $password, $confirmPassword, $myPicture)
     {
+        
         // check if password equals or not
         if ($password == $confirmPassword) {
+            
             $this->user = new User($name, $password, $myPicture);
             $this->updateDB();
             $this->displayUserInfo($this->registerID);
@@ -34,6 +36,7 @@ class RegisterController
     //update database
     function updateDB()
     {
+        
          echo($this->user->getName());
         $this->registerID = $this->db->register($this->user);
         // $this->db->disconnect();
@@ -66,7 +69,8 @@ $rc = new RegisterController();
 $rc->db = new DBController();
 $rc->db->connect();
 
-if(isset($_POST['username'])){
+if(isset($_POST['userName'])){
+    echo "aacc";
     $rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
 }
 

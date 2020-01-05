@@ -13,6 +13,21 @@ form{
     top: 40%;
     transform: translateY(-50%);
 }
+
+#imgPreview {
+    width: 80px;
+    height: 60px;
+    position: absolute;
+    left: 70px;
+    top: 0px;
+    
+}
+
+#image{
+	margin:0 auto;
+display: none;
+}
+
 .inputBox {
     display: block;
     /* width: 100%; */

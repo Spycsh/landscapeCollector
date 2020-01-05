@@ -6,7 +6,53 @@
 	margin-left:10px;
 }
 
+#caption{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
+    width: 100px;
+}
+
 .logoDiv{
+    cursor: pointer;
+	float:left;
+	display:inline;
+	width:50px;
+	
+}
+
+.caption{
+	float:left;
+	display:inline;
+	width:200px;
+	margin-left:20px;
+}
+
+#logout{
+    height: 30px;
+    width: 30px;
+    /* margin-right: 20px; */
+    float: right;
+    background: url(img/logout.png) no-repeat;
+    border: 0;
+}
+
+.space {
+    width: 5px;
+    height: 20px;
+    display: block;
+    float: right;
+}
+
+body #main{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    color: #414141;
+
+}
+
+/* .logoDiv{
 	float:left;
 	display:inline;
 	width:50px;
@@ -24,8 +70,8 @@
 	width:200px;
 	
 	margin-left:20px;
-}
-#caption {
+} */
+/* #caption {
     font-weight: bold;
     font-size: 30px;
     width: 300px;
@@ -35,7 +81,13 @@
     text-rendering: geometricPrecision;
     color: #414141;
     
-}
+} */
+
+/* #caption {
+    font-weight: bold;
+    font-size: 30px;
+    width: 300px;
+} */
 
 #logout{
     height: 30px;
@@ -74,7 +126,8 @@
 	
 	width: 500px;
 	
-	margin:0 auto;
+    margin:0 auto;
+    margin-top: 20px;
 	
 	
 }
