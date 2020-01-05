@@ -2,7 +2,7 @@
 
 // require_once (dirname(dirname(__FILE__)) ."\window\EditRecordWindow.php");
 require_once (dirname(dirname(__FILE__)) . "\model\Record.php");
-require_once "../controller/DBController.php";
+require_once (dirname(dirname(__FILE__)) . "\controller\DBController.php");
 
 // controller to control the behavior of create, select and edit record
 class RecordController
