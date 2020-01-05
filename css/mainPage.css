@@ -5,6 +5,19 @@
     font-size: 30px;
     width: 300px;
 }
+.logoDiv{
+	float:left;
+	display:inline;
+	width:50px;
+	
+}
+
+.caption{
+	float:left;
+	display:inline;
+	width:200px;
+	margin-left:20px;
+}
 
 #logout{
     height: 30px;

@@ -354,7 +354,8 @@ class DBController
         //delete cookie (make cookie invalid in 0.5 seconds)
         setcookie("delete_rid", "", time() - 0.5);
     }
-     //register function for initialization.php (without upload picture)
+    
+    //register function for initialization.php (without upload picture)
     function iniRegister($user)
     {
         
@@ -411,7 +412,7 @@ class DBController
     }
     
     
-    
 }
+
 
 ?>

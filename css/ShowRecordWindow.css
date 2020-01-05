@@ -1,4 +1,6 @@
 @charset "utf-8";
+
+
 .curProfile{
     float:left;
     width: auto;
@@ -8,6 +10,12 @@
 
 .curUserName{
 	 float:left;
+}
+
+#back{
+	float: right; 
+	margin-right:10px;
+	margin-left:10px;
 }
 
 #edit{
@@ -21,6 +29,8 @@
 	margin-right:10px;
 	margin-left:10px;
 }
+
+
 
 #content{
 	
@@ -55,6 +65,7 @@
 	width : 500px;
 	border:1px solid #a5b6c8;
 	background:#eef3f7;
+	margin-top：10px;
 }
 
 #record{
@@ -74,4 +85,33 @@ p{
 	margin-left:10px;
 	margin-bottom: 10px;
 	margin-right:10px;
+}
+
+#re{
+	float:left;
+	margin-bottom:5px;
+	margin-right:5px;
+}
+
+#starDiv{
+	margin-bottom:10px;
+	margin-top:10px;
+	border:1px solid #a5b6c8;
+	height:20px;
+	background:#eef3f7;
+}
+
+.starScore span{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url(../css/img/star-off.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.starScore span.active, .starScore span.select{
+    background: url(../css/img/star-on.png) no-repeat;
+    background-size: 100%;
 }

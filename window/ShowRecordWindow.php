@@ -8,6 +8,7 @@
 <script src="../js/showRecord.js"></script>
 <script src="../js/deleteRecord.js"></script>
 <script src="../js/editRecord.js"></script>
+<script src="../js/back.js"></script>
     <?php
 
     // verify if the user has login
@@ -75,6 +76,8 @@
 
     echo "<img src=$userProfileURL class='curProfile'></img>";
     echo "<p class = 'curUserName'>" . $curUser['name'] . "</p>";
+    
+    echo "<i class='fa fa-arrow-circle-left fa-lg' id='back' onclick=back() aria-hidden='true'></i>";
 
     //only if the author of the record equals to the current user, then user can edit or delete
     if ($curID == $_SESSION['userID']) {
@@ -86,13 +89,27 @@
     
     
     </div>
-		<p id="test"></p>
+		
 		<div id='record'>
 			<div id='location'>
 				<i class="fa fa-location-arrow fa-x"></i>  <?php echo $record->getCountry()?>, <?php echo $record->getCity()?>
     		 
     	</div>
-			<div id='image'>
+    	
+    	<div id="starDiv">
+    			<label id="re">recommendation:</label>
+					<input type="hidden" value=<?php echo $record->getStar(); ?> name="edit_star" id="star">
+					<span class="starScore"> 
+					<span title="1" id="1" class></span> 
+					<span title="2" id="2" class></span> 
+					<span title="3" id="3" class></span>
+					<span title="4" id="4" class></span>
+					<span title="5" id="5" class></span>
+					</span>
+				</div>
+    	
+    	
+	<div id='image'>
     	<?php
     $imageURL = '../uploads/RecordImage/' . $record->getPicture();
     echo "<img src=$imageURL id='image'></img>";
@@ -108,7 +125,20 @@
 		</div>
 
 	</div>
+	<script src="../js/jquery.min.js"></script>
+<script type="text/javascript">
 
+	var stars = $(".starScore")[0].children;
+	
+	var initialStar = $("#star").val();
+	
+	for(var j=0;j<initialStar;j++){
+        stars[j].setAttribute("class", "select");
+    }
+    for(var k=initialStar;k<stars.length;k++){
+        stars[k].setAttribute("class","");
+    }
+    </script>
 
 </body>
 </html>

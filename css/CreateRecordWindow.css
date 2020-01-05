@@ -1,6 +1,69 @@
 @charset "utf-8";
 
+#back{
+	float: right; 
+	margin-right:10px;
+	margin-left:10px;
+}
 
+.logoDiv{
+	float:left;
+	display:inline;
+	width:50px;
+	
+}
+
+#logo{
+	margin-left:5px;
+	margin-top:5px;
+}
+
+.caption{
+	float:left;
+	display:inline;
+	width:200px;
+	
+	margin-left:20px;
+}
+#caption {
+    font-weight: bold;
+    font-size: 30px;
+    width: 300px;
+    margin: 0 0 .4em 0;
+    font-family: Oswald,Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3",Microsoft JhengHei,WenQuanYi Micro Hei,"Microsoft YaHei",sans-serif;
+    font-size: 1.8rem;
+    text-rendering: geometricPrecision;
+    color: #414141;
+    
+}
+
+#logout{
+    height: 30px;
+    width: 30px;
+    /* margin-right: 20px; */
+    float: right;
+    background: url(img/logout.png) no-repeat;
+    border: 0;
+}
+
+.userProfile{
+    display: block;
+    float:right;
+    /* margin-right: 20px; */
+    width: auto;
+    height: 20px;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-radius: 10px;
+    background-color: rgb(11, 9, 172);
+}
+
+.curProfile{
+    float: right;
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+}
 
 #main{
 	width: 500px;
@@ -13,11 +76,10 @@
 	
 	margin:0 auto;
 	
+	
 }
 
-body{
-	margin-top:100px;
-}
+
 
 label { 
 	float: left; 
@@ -51,6 +113,10 @@ max-width:250px;
 #image{
 	margin:0 auto;
 display: none;
+}
+
+header{
+	height:80px;
 }
 
 #comment{

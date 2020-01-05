@@ -11,9 +11,13 @@
 <body>
 
 <?php
+
+require_once "../controller/DBController.php";
+$db = new DBController();
+$db->connect();
+
 // verify if the user has login
 session_start();
-
 // if session is empty then go to login window
 if (! isset($_SESSION['userName'])) {
     echo ($_SESSION['userName']);
@@ -22,6 +26,30 @@ if (! isset($_SESSION['userName'])) {
     exit();
 }
 ?>
+    <header id="header" class="site-header">
+    <div class='logoDiv'>
+		<img id="logo" src = '../css/img/logo.png'></img>
+	</div>
+	<div class='caption'>
+		<h1 id="caption">LANDSCAPE COLLECTOR</h1>
+	</div>
+		<button id="logout" title="log out"
+			onclick="location.href='../controller/logout.php'"></button>
+		<span class="space"></span>
+        <?php
+        // get profile of current user
+        $curID = $_SESSION['userID'];
+        $curUser = $db->getUserInfoById($curID);
+        if ($curUser['image'] != '') {
+            $userProfileURL = '../uploads/userProfile/' . $curUser['image'];
+        } else {
+            $userProfileURL = '../uploads/userProfile/' . "default.jpg";
+        }
+        $db->disconnect();
+        echo "<img src=$userProfileURL class='curProfile'></img>"?>
+        
+        
+    </header>
 
 
 
@@ -76,7 +104,6 @@ if (! isset($_SESSION['userName'])) {
 
 	<script src="../js/jquery.min.js"></script>
 	<script type="text/javascript">
-
 	var stars = $(".starScore")[0].children;
 	
 	for(var i=0;i<stars.length;i++){
@@ -85,21 +112,17 @@ if (! isset($_SESSION['userName'])) {
 	        for(var j=0;j<rating;j++){
 	            if(stars[j].className!="select"){
 	            stars[j].setAttribute("class", "active");
-
 	            }
 	        }
 	    })
-
 	    stars[i].addEventListener("mouseleave",function(){
 	        var rating = event.target.id; 
 	        for(var j=0;j<rating;j++){
 	            if(stars[j].className!="select"){
 	                            stars[j].setAttribute("class", "");
-
 	            }
 	        }
 	    })
-
 	    stars[i].addEventListener("click",function(){
 	        var rating = event.target.id; 
 	        $('#star').val(rating);
@@ -112,18 +135,15 @@ if (! isset($_SESSION['userName'])) {
 	    })
 	}
 		
-
 	
 	//show the selected picture
 	$('#chooseImage').on('change', function() {
 		 var filePath = $(this).val(), 
 		 fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
 		 src = window.URL.createObjectURL(this.files[0]); 
-
 		
 		
 		 if(!fileFormat.match(/.png|.jpg|.jpeg/)) {
-
 		 //filter the file type
 		 alert('please upload one png/jpg/jpeg file');
 		 return;

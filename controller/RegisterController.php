@@ -34,7 +34,7 @@ class RegisterController
     //update database
     function updateDB()
     {
-        // echo("ss");
+         echo($this->user->getName());
         $this->registerID = $this->db->register($this->user);
         // $this->db->disconnect();
     }
@@ -69,6 +69,7 @@ $rc->db->connect();
 if(isset($_POST['username'])){
     $rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
 }
+
 
 // $rc->displayUserInfo($rc->registerID);
 

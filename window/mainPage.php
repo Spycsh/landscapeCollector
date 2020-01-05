@@ -21,52 +21,45 @@
 <body>
     <?php
     require_once "../controller/DBController.php";
-
     $db = new DBController();
     $db->connect();
-
     // verify if the user has login
     session_start();
-
     // if session is empty, then go to login
     if (! isset($_SESSION['userName'])) {
         echo ($_SESSION['userName']);
-
         // header("Location:login_process.php");
         header("Location:../window/login.html");
         exit();
     }
-
     // print_r($_COOKIE);
-
     //if delete_rid exists, then delete the record in the database
     if (isset($_COOKIE["delete_rid"])) {
         $RID = $_COOKIE["delete_rid"];
-
         $db->deleteRecord($RID);
     }
-
     ?>
     
 
     <header id="header" class="site-header">
-		<span id="caption">Landscape Collector</span>
+    <div class='logoDiv'>
+		<img id="logo" src = '../css/img/logo.png'></img>
+	</div>
+	<div class='caption'>
+		<h1 id="caption">LANDSCAPE COLLECTOR</h1>
+	</div>
 		<button id="logout" title="log out"
 			onclick="location.href='../controller/logout.php'"></button>
 		<span class="space"></span>
         <?php
         // get profile of current user
-
         $curID = $_SESSION['userID'];
-
         $curUser = $db->getUserInfoById($curID);
-
         if ($curUser['image'] != '') {
             $userProfileURL = '../uploads/userProfile/' . $curUser['image'];
         } else {
             $userProfileURL = '../uploads/userProfile/' . "default.jpg";
         }
-
         $db->disconnect();
         echo "<img src=$userProfileURL class='curProfile'></img>"?>
         
@@ -110,7 +103,6 @@
                 $_SESSION['curPageNum'] = 1;
             }
             echo ("<script>changePage(" . $_SESSION['curPageNum'] . ")</script>");
-
             ?>
             <!-- <script>changePage(1);</script> -->
 
@@ -151,14 +143,12 @@
             // $db = new DBController();
             // $db->connect();
             // $pageNum = $db->getPageNum();
-
             // $db->disconnect();
             // for ($i = 1; $i <= $pageNum; $i ++) {
             //     echo "<a class='page-number' onclick=changePage($i)>$i</a>";
             // }
             ?>
             <!-- <a class="page-number" onclick=changePage(1)>1</a>
-
             <a class="page-number" onclick=changePage(2)>2</a>
             <a class="page-number" onclick=changePage(3)>3</a> -->
 		<!-- <a class="extend next" rel="next" href="/page/2/">Next</a> -->

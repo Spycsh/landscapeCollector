@@ -9,6 +9,7 @@
 <title>edit your record</title>
 <link href="../css/CreateRecordWindow.css" rel="stylesheet"
 	type="text/css" />
+	<script src="../js/back.js"></script>
 </head>
 <body>
 
@@ -44,7 +45,7 @@ $record = $rc->selectRecord($recordID);
 <div id="content">
 
 		<h1>Share your Landscape!</h1>
-
+		<i class='fa fa-arrow-circle-left fa-lg' id='back' onclick=back() aria-hidden='true'></i>
 		<div id="main">
 
 
