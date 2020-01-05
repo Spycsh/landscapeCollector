@@ -354,6 +354,64 @@ class DBController
         //delete cookie (make cookie invalid in 0.5 seconds)
         setcookie("delete_rid", "", time() - 0.5);
     }
+     //register function for initialization.php (without upload picture)
+    function iniRegister($user)
+    {
+        
+        // echo($user->name);
+        // echo($user->myPicture);
+        // echo($user->password);
+        $userName = $user->getName();
+        $myPictureName = $user->getMyPicture();
+        $password = $user->getPassword();
+        
+        $passwordMD5 = md5($password); // write encrypted password into database
+        // check the user name exist or not
+        $userNameSQL = "select * from user where name='$userName'";
+        $resultSet = $this->conn->query($userNameSQL);
+        if ($resultSet->num_rows > 0) {
+            exit("User Name has been used, please change another<br>");
+        }
+        
+       
+        // insert data
+        $stmt = $this->conn->prepare("INSERT INTO user (name,password, image) VALUES(?, ?, ?)");
+        $stmt->bind_param("sss", $userName, $passwordMD5, $myPictureName);
+        
+
+            session_start();
+            $_SESSION['userName'] = $userName;
+            
+            $stmt->execute();
+            $userID = mysqli_insert_id($this->conn);
+            
+            $_SESSION['userID'] = $userID;
+            
+          
+            return $userID;
+
+    }
+    
+    //create record function for initialization.php (without upload picture)
+    function iniCreateRecord($record)
+    {
+        $country = $record->getCountry();
+        $city = $record->getCity();
+        $picture = $record->getPicture();
+        $comment = $record->getComment();
+        $user = $record->getUserID();
+        $star = $record->getStar();
+        
+        $stmt = "INSERT INTO Record (iduser,country, city, picture,comment, star )
+         VALUES ($user, '" . $country . "', '" . $city . "','" . $picture . "','" . $comment . "'," . $star . ")";
+        
+        if (mysqli_query($this->conn, $stmt)) {
+            echo "create success;<br>";
+        }
+    }
+    
+    
+    
 }
 
 ?>
