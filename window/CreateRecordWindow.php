@@ -4,8 +4,8 @@
 	content="width=device-width, initial-scale=1.0">
 <title>create your record</title>
 <head>
-<link href="../css/CreateRecordWindow.css" rel="stylesheet"
-	type="text/css" />
+<link href="../css/CreateRecordWindow.css" rel="stylesheet" type="text/css" />
+<script src="../js/createValidation.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -62,7 +62,7 @@ if (! isset($_SESSION['userName'])) {
 
 
 			<form method="post" action="../controller/RecordController.php"
-				enctype="multipart/form-data">
+				enctype="multipart/form-data" onsubmit="return check()">
 
 				<label>country: </label> <input type="text" name="create_country" required> <br>
 				<label>city: </label> <input type="text" name="create_city" required> <br> 

@@ -4,13 +4,15 @@
 <head>
 <link rel="stylesheet" href="../css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/register.css">
+<link href="../css/CreateRecordWindow.css" rel="stylesheet" type="text/css" />
+<script src="../js/registerValidation.js" type="text/javascript"></script>
 </head>
 
 <body>
 	<div id="main">
 
 		<form action="../controller/RegisterController.php" method="POST"
-			enctype="multipart/form-data">
+			enctype="multipart/form-data" onsubmit="return check()">
 			<!--upload for file type need to use enctype-->
 			<h2>Register</h2>
 			<hr>
@@ -25,14 +27,36 @@
 				placeholder="Confirm password" required> <br> <span><i
 				class="fa fa-camera-retro"></i>Portrait:</span>
 			<!--less than 2MB -->
-			<input type="hidden" name="MAX_FILE_SIZE" value="2000000"> <input
-				type="file" name="myPicture" size="25" maxlength="100"> <br>
+			<input type="hidden" name="MAX_FILE_SIZE" value="2000000"> 			
+			<input type="file" name="myPicture" id="headPicture" size="25" maxlength="100"> <br>
+			
+			<div id="imagePreview"><img src="#" id="image"></div>
 
 			<input type="submit" name="submit" value="register"> <input
 				type="reset" name="cancel" value="reset">
 		</form>
 	</div>
 
+<script src="../js/jquery.min.js"></script>
+	        <script type="text/javascript">
+	        $('#headPicture').on('change', function() {
+	   		 var filePath = $(this).val(), 
+	   		 fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+	   		 src = window.URL.createObjectURL(this.files[0]); 
+	   		 if(!fileFormat.match(/.png|.jpg|.jpeg/)) {
+	   		 //filter the file type
+	   		 alert('please upload one png/jpg/jpeg file');
+	   		 return;
+	   		 }else{
+	   			 //adjust the size of the picture
+	   		 $('#image').css('display','block');
+	   		 $('#image').css('max-height','350px');
+	   		 $('#image').css('max-width','250px');
+	   		 $('#image').attr('src', src); 
+	   		 } 
+	   		});
+	   			
+	   	</script>
 </body>
 
 </html>
