@@ -87,6 +87,10 @@ class RecordController
 
 $crc = new RecordController();
 
+
+
+// when post variable from create page is not empty
+if (! empty($_POST["create_country"])) {
 if(empty($_POST["create_star"])){
     echo "<script>
     var del=confirm('You have not set the recommendation star? You will by default give 5 stars to your landscape~');
@@ -98,10 +102,6 @@ if(empty($_POST["create_star"])){
     </script>";
     $_POST["create_star"] = 5;
 }
-
-// when post variable from create page is not empty
-if (! empty($_POST["create_country"])) {
-
     $crc->createRecord($_POST["create_country"], $_POST["create_city"], $_FILES["create_picture"]["name"], $_POST["create_comment"], $_POST["create_star"]);
 }
 
