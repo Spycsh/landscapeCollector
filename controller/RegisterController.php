@@ -66,7 +66,9 @@ $rc = new RegisterController();
 $rc->db = new DBController();
 $rc->db->connect();
 
-$rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
+if(isset($_POST['username'])){
+    $rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
+}
 
 // $rc->displayUserInfo($rc->registerID);
 
