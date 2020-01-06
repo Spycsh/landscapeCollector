@@ -1,18 +1,39 @@
 #main{
     margin:0 auto;
-    width: 300px;
+    width: 500px;
     height: 1200px;
+    margin-left: auto;
+    margin-right:auto;
 }
 
-/* h2{
+ h2 p{
     text-align: center;
-} */
+} 
+
+body{
+	width:500px;
+	margin-top:30px;
+	margin: 0 auto;
+}
+
+
+
+#title{
+	margin: 0 auto;
+	width:500px;
+	text-align:center;
+	margin:0 auto;
+}
+
 
 form{
-    position: absolute;
+   /*  position: absolute;
     top: 40%;
-    transform: translateY(-50%);
-}
+    transform: translateY(-50%); */
+    margin: 0 auto;
+width:150px;
+    
+} 
 
 #imgPreview {
     width: 80px;
@@ -20,6 +41,7 @@ form{
     position: absolute;
     left: 70px;
     top: 0px;
+
     
 }
 

@@ -114,8 +114,8 @@ body #content{
 
 #location{
 	margin-bottom:20px;
-	border:1px solid #a5b6c8;
-	background:#eef3f7;
+	border:1px solid #ff9310;
+	background:#faedd9;
 }
 
 #userInfo{
@@ -135,8 +135,8 @@ body #content{
 
 #image{
 	width : 500px;
-	border:1px solid #a5b6c8;
-	background:#eef3f7;
+	
+	
 }
 
 #record{
@@ -147,8 +147,8 @@ body #content{
 
 #comment{
 	margin-top:30px;
-	border:1px solid #a5b6c8;
-	background:#eef3f7;
+	border:1px solid #ff9310;
+	background:#faedd9;
 }
 
 p{
@@ -167,9 +167,8 @@ p{
 #starDiv{
 	margin-bottom:10px;
 	margin-top:10px;
-	border:1px solid #a5b6c8;
 	height:25px;
-	background:#eef3f7;
+	
 }
 
 .starScore span{
