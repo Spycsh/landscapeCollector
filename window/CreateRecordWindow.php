@@ -66,8 +66,10 @@ if (! isset($_SESSION['userName'])) {
 			<form method="post" action="../controller/RecordController.php"
 				enctype="multipart/form-data" onsubmit="return check()">
 
-				<label>country: </label> <input type="text" name="create_country" required> <br>
-				<label>city: </label> <input type="text" name="create_city" required> <br> 
+				<label>country: </label> <input type="text" name="create_country" required>
+				<p id="hint1"></p>
+				<label>city: </label> <input type="text" name="create_city" required>
+				<p id="hint2"></p>
 				<label>click button to choose your picture</label>
 					 <br> 
 					<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
@@ -85,6 +87,7 @@ if (! isset($_SESSION['userName'])) {
 				<div id="commentDiv">
 					<label>your comment: </label>
 					<textarea rows="10" cols="30" name="create_comment" id="comment"></textarea>
+					<p id="hint3"></p>
 					<br>
 				</div>
 
