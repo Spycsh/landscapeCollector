@@ -9,15 +9,22 @@
 </head>
 
 <body>
+
+<div id='title'>
+<h2>Register</h2>
+			<p>Password need to contain uppercase, lowercase, number and special character<br>
+			The length need to be 8-10.<br>
+			</p>
+		</div>	
+			
 	<div id="main">
+
+
 
 		<form action="../controller/RegisterController.php" method="POST"
 			enctype="multipart/form-data" onsubmit="return check()">
 			<!--upload for file type need to use enctype-->
-			<h2>Register</h2>
-			Password need to contain uppercase, lowercase, alphanumeric and special characters<br>
-			The length need to be 8-10.<br>
-			<hr>
+			
 			<span><i class="fa fa-user"></i>User Name:</span> <input
 				class="inputBox" type="text" name="userName" size="20"
 				maxlength="15" placeholder="User Name" required> <br> 
@@ -37,10 +44,10 @@
 			<input type="hidden" name="MAX_FILE_SIZE" value="2000000"> 			
 			<input type="file" name="myPicture" id="headPicture" size="25" maxlength="100"> <br>
 			
-			<div id="imagePreview"><img src="#" id="image"></div>
+			<div id="imagePreview"><img src='../uploads/userProfile/default.jpg' id="image"></div>
 
 			<input type="submit" name="submit" value="register"> <input
-				type="reset" name="cancel" value="reset">
+				type="reset" name="cancel" value="reset" onclick='clearPic()'>
 		</form>
 	</div>
 
@@ -63,6 +70,11 @@
 	   		 } 
 	   		});
 	   			
+	        
+	        function clearPic(){
+	        	var image = document.getElementById("image");
+	        	image.src='../uploads/userProfile/default.jpg';
+	        }
 	   	</script>
 </body>
 

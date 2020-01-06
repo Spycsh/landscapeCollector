@@ -81,7 +81,7 @@ $record = $rc->selectRecord($recordID);
 
 
 			<form method="post" action="../controller/RecordController.php"
-				enctype="multipart/form-data">
+				enctype="multipart/form-data" >
 
 				<input type="hidden" value="<?php echo $recordID; ?>" name="edit_id"
 					id="edit_id"> <label>country: </label> <input type="text"
@@ -90,7 +90,7 @@ $record = $rc->selectRecord($recordID);
 					value="<?php echo $record->getCity(); ?>"> <br> <label>click button
 					to choose your picture</label> <br> <input type="hidden"
 					name="MAX_FILE_SIZE" value="2000000"> <input type="file"
-					name="edit_picture" id="chooseImage" size="25" maxlength="100"> <br>
+					name="edit_picture" id="chooseImage" value=<?php echo '../uploads/RecordImage/' . $record->getPicture(); ?> size="25" maxlength="100"> <br>
 
 				<div id="imagePreview">
 				
@@ -173,7 +173,7 @@ $record = $rc->selectRecord($recordID);
 	    })
 	}
 		
-
+	
 	
 	//show the selected picture
 	$('#chooseImage').on('change', function() {
