@@ -305,13 +305,21 @@ class DBController
     //eidt the records
     function editRecord($oldRecord, $newRecord)
     {
+        if($newRecord->getPicture() == ""){
+            $stmt = "UPDATE record SET country='" . $newRecord->getCountry() . "',
+                                    city='" . $newRecord->getCity() . "',
+                                    comment='" . $newRecord->getComment() . "',
+                                    star='" . $newRecord->getStar() . "'
+                                    WHERE idrecord=" . $oldRecord->getRecordID() . "";
+        }else{
         $stmt = "UPDATE record SET country='" . $newRecord->getCountry() . "',
                                     city='" . $newRecord->getCity() . "',
                                     picture='" . $newRecord->getPicture() . "',
                                     comment='" . $newRecord->getComment() . "',
                                     star='" . $newRecord->getStar() . "'
                                     WHERE idrecord=" . $oldRecord->getRecordID() . "";
-
+        }
+        
         $this->uploadRecordImage($_FILES['edit_picture']);
 
         if (mysqli_query($this->conn, $stmt)) {
