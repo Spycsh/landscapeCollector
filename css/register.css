@@ -10,19 +10,20 @@
     text-align: center;
 } 
 
+
 body{
 	width:500px;
-	margin-top:30px;
+	margin-top:50px;
 	margin: 0 auto;
 }
 
 
 
 #title{
-	margin: 0 auto;
 	width:500px;
 	text-align:center;
 	margin:0 auto;
+	margin-top:50px;
 }
 
 
