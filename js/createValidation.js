@@ -2,6 +2,9 @@ function check(){
 	var form=document.forms[0];
 	var error="";
 	var country=form.create_country.value;
+	document.getElementById("hint1").innerHTML="";
+	document.getElementById("hint2").innerHTML="";
+	document.getElementById("hint3").innerHTML="";
 	if(country==""){
 //		error=error+"you have not fill in the country!\n";
 		document.getElementById("hint1").innerHTML="<font color='red'>you have not fill in the country!\n</font>";

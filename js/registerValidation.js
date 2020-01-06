@@ -1,6 +1,8 @@
 function check(){
 	var form=document.forms[0];
 	var error="";
+	document.getElementById("hint").innerHTML="";
+	document.getElementById("hint2").innerHTML="";
 	var str=form.password.value;
 	if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/.test(str)){	}
 	else{
