@@ -9,8 +9,10 @@
 <title>edit your record</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <link href="../css/CreateRecordWindow.css" rel="stylesheet" type="text/css" />
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <script src="../js/editValidation.js" type="text/javascript"></script>
 <script src="../js/back.js" type="text/javascript"></script>
+
 </head>
 <body>
 <?php
@@ -77,7 +79,9 @@ $record = $rc->selectRecord($recordID);
 		<!-- <button><i class='fa fa-arrow-circle-left fa-lg' id='back' onclick=back() aria-hidden='true'></i></button> -->
 		<div id="main">
 
-
+			<div id="backDiv">
+				<i class="fa fa-arrow-circle-left fa-lg" id="back" onclick=backToShowRecordWindow()></i>
+			</div>
 
 			<form method="post" action="../controller/RecordController.php"
 				enctype="multipart/form-data" onsubmit="return check()">

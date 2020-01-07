@@ -1,9 +1,14 @@
 @charset "utf-8";
 
-#back{
+/* #back{
 	float: right; 
 	margin-right:10px;
 	margin-left:10px;
+} */
+
+#backDiv{
+    height: 30px;
+    /* height: 40px; */
 }
 
 #caption{

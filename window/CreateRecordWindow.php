@@ -6,6 +6,7 @@
 <head>
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <link href="../css/CreateRecordWindow.css" rel="stylesheet" type="text/css" />
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <script src="../js/createValidation.js" type="text/javascript"></script>
 <script src="../js/back.js" type="text/javascript"></script>
 </head>
@@ -60,7 +61,9 @@ if (! isset($_SESSION['userName'])) {
 		<h1>Share your Landscape!</h1>
 
 		<div id="main">
-
+			<div id="backDiv">
+				<i class="fa fa-arrow-circle-left fa-lg" id="back" onclick=back()></i>
+			</div>
 
 
 			<form method="post" action="../controller/RecordController.php"
