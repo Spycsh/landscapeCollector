@@ -150,7 +150,7 @@ if (! isset($_SESSION['userName'])) {
 		
 		 if(!fileFormat.match(/.png|.jpg|.jpeg|.pdf/)) {
 		 //filter the file type
-		 alert('please upload one png/jpg/jpeg file');
+		 alert('please upload one png/jpg/jpeg/pdf file');
 		 return;
 		 }else{//adjust the size of the picture
 		 $('#image').css('display','block');
