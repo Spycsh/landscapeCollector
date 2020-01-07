@@ -7,13 +7,12 @@
 <head>
 <meta charset="utf-8">
 <title>edit your record</title>
-<link href="../css/style.css" rel="stylesheet"
-    type="text/css" />
-<link href="../css/CreateRecordWindow.css" rel="stylesheet"
-	type="text/css" />
-	<script src="../js/back.js"></script>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/CreateRecordWindow.css" rel="stylesheet" type="text/css" />
+<script src="../js/editValidation.js" type="text/javascript"></script>
+<script src="../js/back.js" type="text/javascript"></script>
 </head>
-
+<body>
 <?php
 
 require_once "../controller/DBController.php";
@@ -47,7 +46,7 @@ $record = $rc->selectRecord($recordID);
 ?>
 
 
-<body>
+
 			<header id="header" class="site-header">
 			<div class='logoDiv' onclick=back()>
 				<img id="logo" src = '../css/img/logo.png'></img>
@@ -81,16 +80,18 @@ $record = $rc->selectRecord($recordID);
 
 
 			<form method="post" action="../controller/RecordController.php"
-				enctype="multipart/form-data" >
-
+				enctype="multipart/form-data" onsubmit="return check()">
+				
 				<input type="hidden" value="<?php echo $recordID; ?>" name="edit_id"
 					id="edit_id"> <label>country: </label> <input type="text"
-					name="edit_country" value="<?php echo $record->getCountry(); ?>"> <br>
+					name="edit_country" value="<?php echo $record->getCountry(); ?>">
+					<p id="hint1"></p>
 				<label>city: </label> <input type="text" name="edit_city"
-					value="<?php echo $record->getCity(); ?>"> <br> <label>click button
-					to choose your picture</label> <br> <input type="hidden"
-					name="MAX_FILE_SIZE" value="2000000"> <input type="file"
-					name="edit_picture" id="chooseImage" value=<?php echo '../uploads/RecordImage/' . $record->getPicture(); ?> size="25" maxlength="100"> <br>
+					value="<?php echo $record->getCity(); ?>">
+					<p id="hint2"></p>
+					<label>click button to choose your picture</label>
+					<input type="hidden" name="MAX_FILE_SIZE" value="2000000"> 
+					<input type="file" name="edit_picture" id="chooseImage" size="25" maxlength="100"> <br>
 
 				<div id="imagePreview">
 				
@@ -102,11 +103,12 @@ $record = $rc->selectRecord($recordID);
 					
 					
 				</div>
-
+				 <p id="hint4"></p> <br>
 
 				<div id="commentDiv">
 					<label>your comment: </label>
 					<textarea rows="10" cols="30" name="edit_comment" id="comment"><?php echo $record->getComment(); ?></textarea>
+					<p id="hint3"></p>
 					<br>
 				</div>
 
@@ -173,7 +175,7 @@ $record = $rc->selectRecord($recordID);
 	    })
 	}
 		
-	
+
 	
 	//show the selected picture
 	$('#chooseImage').on('change', function() {
@@ -195,9 +197,5 @@ $record = $rc->selectRecord($recordID);
 		});
 			
 	</script>
-
-
-
-
 </body>
 </html>

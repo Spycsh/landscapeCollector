@@ -82,7 +82,7 @@ if (! isset($_SESSION['userName'])) {
 					<img src="#" id="image">
 				</div>
 
-
+               <p id="hint4"></p> <br>
 
 				<div id="commentDiv">
 					<label>your comment: </label>
