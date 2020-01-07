@@ -103,7 +103,7 @@ $record = $rc->selectRecord($recordID);
 					
 					
 				</div>
-
+				 <p id="hint4"></p> <br>
 
 				<div id="commentDiv">
 					<label>your comment: </label>
