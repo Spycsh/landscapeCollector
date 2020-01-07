@@ -9,6 +9,11 @@ form{
     top: 40%;
     transform: translateY(-50%);
 }
+
+h2{
+	 text-align: center;
+}
+
 .inputBox {
     display: block;
     /* width: 100%; */
