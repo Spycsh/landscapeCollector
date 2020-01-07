@@ -148,7 +148,7 @@ if (! isset($_SESSION['userName'])) {
 		 src = window.URL.createObjectURL(this.files[0]); 
 		
 		
-		 if(!fileFormat.match(/.png|.jpg|.jpeg/)) {
+		 if(!fileFormat.match(/.png|.jpg|.jpeg|.pdf/)) {
 		 //filter the file type
 		 alert('please upload one png/jpg/jpeg file');
 		 return;
