@@ -183,10 +183,12 @@ $record = $rc->selectRecord($recordID);
 		 fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
 		 src = window.URL.createObjectURL(this.files[0]); 
 		
-		 if(!fileFormat.match(/.png|.jpg|.jpeg|.pdf/)) {
+		 if(!fileFormat.match(/.png|.jpg|.jpeg/)) {
 
 		 //filter the file type
-		 alert('please upload one png/jpg/jpeg/pdf file');
+		 alert('please upload one png/jpg/jpeg/ file');
+		 $(this).val("");
+		 
 		 return;
 		 }else{//adjust the size of the picture
 		 $('#editImage').css('display','block');
