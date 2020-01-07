@@ -32,7 +32,7 @@ form{
     top: 40%;
     transform: translateY(-50%); */
     margin: 0 auto;
-width:150px;
+width:200px;
     
 } 
 
@@ -68,4 +68,21 @@ display: none;
     -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.tipBox {
+    display: none;
+    width: 200px;
+    height: auto;
+    background: #FFFFDF;
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+    position: absolute;
+}
+
+.infoBtn {
+    background: url(../css/img/informationBtn.png) no-repeat;
+    border: 0;
+    text-align: center;
 }
