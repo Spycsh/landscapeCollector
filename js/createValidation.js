@@ -50,6 +50,15 @@ function check(){
 		document.getElementById("hint3").innerHTML="<font color='red'>the length of the comments can not be longer than 500 words.\n</font>";
 		error=".";
 	}
+	
+	var fileId="chooseImage";
+	var img=document.getElementById(fileId);
+	var imgSize=img.files[0].size;
+	var size=imgSize/1024;
+	if(size>200000){
+		document.getElementById("hint4").innerHTML="<font color='red'>The picture need to smaller than 200M.\n</font>";
+		error="false";
+	}
     
 	if (error != "") {
 //		
