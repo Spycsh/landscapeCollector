@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+#caption{
+	cursor: pointer;
+
+    font-weight: bold;
+    font-size: 30px;
+    width: 100px;
+}
+.logoDiv{
+	float:left;
+	display:inline;
+	width:50px;
+	
+}
+
+body #content{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    color: #414141;
+
+}
+
+.userProfile{
+    display: block;
+    float:right;
+    /* margin-right: 20px; */
+    width: auto;
+    height: 20px;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-radius: 10px;
+    /* background-color: rgb(11, 9, 172); */
+}
+
+.curProfile{
+    float: right;
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.authorInfo{
+    display: block;
+    float: right;
+}
+
+.space{
+    width:5px;
+    height: 20px;
+    display: block;
+    float: right;
+}
+
+.caption{
+	cursor: pointer;
+	float:left;
+	display:inline;
+	width:200px;
+	margin-left:20px;
+}
+
+#logout{
+    height: 30px;
+    width: 30px;
+    /* margin-right: 20px; */
+    float: right;
+    background: url(img/logout.png) no-repeat;
+    border: 0;
+}
+
+.recordProfile{
+    float:left;
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+}
+
+
+.curUserName{
+	 float:left;
+}
+
+#back{
+	float: right; 
+	margin-right:10px;
+	margin-left:10px;
+}
+
+#edit{
+	float: right;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+#delete{
+	float: right; 
+	margin-right:10px;
+	margin-left:10px;
+}
+
+.fa-lg{
+	margin-top: 10px;
+}
+
+#content{
+	
+	margin: 0 auto;
+	width: 500px;
+	margin-top:10px;
+	margin-bottom: 200px;
+}
+
+#location{
+	margin-bottom:20px;
+	border:1px solid #ff9310;
+	background:#faedd9;
+}
+
+#userInfo{
+	height:80px;
+	width:500px;
+	
+}
+
+.curUserName{
+	margin-left:20px;
+}
+
+.recordImage{
+	
+	width : 500px;
+}
+
+#image{
+	width : 500px;
+	
+	
+}
+
+#record{
+	width:500px;
+}
+
+
+
+#comment{
+	margin-top:30px;
+	border:1px solid #ff9310;
+	background:#faedd9;
+}
+
+p{
+	margin-top:10px;
+	margin-left:10px;
+	margin-bottom: 10px;
+	margin-right:10px;
+}
+
+#re{
+	float:left;
+	margin-bottom:5px;
+	margin-right:5px;
+}
+
+#starDiv{
+	margin-bottom:10px;
+	margin-top:10px;
+	height:25px;
+	
+}
+
+.starScore span{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url(../css/img/star-off.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.starScore span.active, .starScore span.select{
+    background: url(../css/img/star-on.png) no-repeat;
+    background-size: 100%;
+}
