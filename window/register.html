@@ -6,17 +6,15 @@
 <link rel="stylesheet" href="../css/register.css">
 <!-- <link href="../css/CreateRecordWindow.css" rel="stylesheet" type="text/css" /> -->
 <script src="../js/registerValidation.js" type="text/javascript"></script>
-<script src="../js/registerTip.js" type="text/javascript"></script>
-
 </head>
 
 <body>
 
 <div id='title'>
 <h2>Register</h2>
-			<!-- <p>Password need to contain uppercase,<br> lowercase, number and special character<br>
+			<p>Password need to contain uppercase, lowercase, number and special character<br>
 			The length need to be 8-10.<br>
-			</p> -->
+			</p>
 		</div>	
 			
 	<div id="main">
@@ -27,32 +25,21 @@
 			enctype="multipart/form-data" onsubmit="return check()">
 			<!--upload for file type need to use enctype-->
 			
-			<span><i class="fa fa-user"></i> User Name: </span> <input
+			<span><i class="fa fa-user"></i>User Name:</span> <input
 				class="inputBox" type="text" name="userName" size="20"
 				maxlength="15" placeholder="User Name" required> <br> 
-				<span><i class="fa fa-key"></i> Password: </span>
-
-				<button class="infoBtn" onmouseover="display()" onmouseout="disappear()">?</button>
-				<div id="pwdInfoBox" class="tipBox" style="display: none;">
-					Password need to contain uppercase,
-					lowercase, number and special character.
-					The length need to be 8-10.
-				</div> <br>
+				<span><i class="fa fa-key"></i>Password:</span> <br>
 				<!--  Password need to contain uppercase, lowercase, alphanumeric and special characters<br>-->
 				<input class="inputBox" type="password" name="password" id="password" size="20" maxlength="15" placeholder="password" required> 
 				
 				
-				
 				<p id="hint"></p> <br>
-				<span><i class="fa fa-key"></i> Confirm Password: </span> 
-				<button class="infoBtn" onmouseover="displayConfirmBox()" onmouseout="disappearConfirmBox()">?</button>
-				<div id="cpwdInfoBox" class="tipBox" style="display: none;">
-					Confirm Password need to be identical to password
-				</div> <br>				<input class="inputBox" type="password" name="confirmPassword" id="confirmPassword" size="20" maxlength="15" placeholder="Confirm password" required> 
+				<span><i class="fa fa-key"></i>Confirm Password:</span> 
+				<input class="inputBox" type="password" name="confirmPassword" id="confirmPassword" size="20" maxlength="15" placeholder="Confirm password" required> 
 				
 				
 				<p id="hint2"></p> <br>
-				<span><i class="fa fa-camera-retro"></i> Portrait: </span>
+				<span><i class="fa fa-camera-retro"></i>Portrait:</span>
 			<!--less than 2MB -->
 			<input type="hidden" name="MAX_FILE_SIZE" value="2000000"> 			
 			<input type="file" name="myPicture" id="headPicture" size="25" maxlength="100"> <br>
