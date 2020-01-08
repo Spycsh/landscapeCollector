@@ -70,7 +70,6 @@ $rc->db = new DBController();
 $rc->db->connect();
 
 if(isset($_POST['userName'])){
-    echo "aacc";
     $rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
 }
 
