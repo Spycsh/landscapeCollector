@@ -5,18 +5,22 @@ function check(){
 	document.getElementById("hint1").innerHTML="";
 	document.getElementById("hint2").innerHTML="";
 	document.getElementById("hint3").innerHTML="";
-
+//
 //	function checkName(){
 //		var name=form.userName.value;
 //		$.ajax({
-//			url:"search.php?keyWord="+name,
+//			type="post",
+//			url:'../controller/registerController.php',
+//	        data: {"content":name},
+//	        dataType: 'text',
+//	        dataType: 'JSON',
 //			success:function(data){
 //				
 //			}
 //		})
 //	}
-//	
-//	
+	
+	
 	var str=form.password.value;
 	var str2=form.confirmPassword.value;
 	
@@ -29,7 +33,7 @@ function check(){
 	}
 	
 	
-	if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9].{8,10}$/.test(str)){	}
+	if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,10}$/.test(str)){	}
 	else{
 		document.getElementById("hint").innerHTML="<font color='red'>The password does not comply with the standard. Password need to contain uppercase,lowercase, number.The length need to be 8-10.\n</font>";
 		document.getElementById("hint2").innerHTML="<font color='red'>The password does not comply with the standard.Password need to contain uppercase,lowercase, number.The length need to be 8-10.\n</font>";
