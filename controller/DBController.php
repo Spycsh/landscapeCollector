@@ -3,7 +3,7 @@
 class DBController
 {
     // remember to change the port number!
-    var $servername = "127.0.0.1:3307";
+    var $servername = "127.0.0.1:3306";
 
    
     var $username = "root";
@@ -55,11 +55,17 @@ class DBController
             echo "window.location.href='$url'";
             echo "</script>";
         } else { // if not login yet, then jump to the login page
-            $url = dirname(dirname(__FILE__)) . "\window\login.php";
-            echo "login Fail!";
+//             $url = dirname(dirname(__FILE__)) . "\window\login.php";
+//             echo "login Fail!";
+            echo "<script>alert(\"the name or the password is wrong\");</script>";
+            
             echo "<script type='text/javascript'>";
-            echo "window.location.href='$url'";
+            echo "window.location.href='../window/login.html'";
             echo "</script>";
+            exit();
+//             echo "<script type='text/javascript'>";
+//             echo "window.location.href='$url'";
+//             echo "</script>";
         }
     }
 
@@ -109,7 +115,28 @@ class DBController
         $userNameSQL = "select * from user where name='$userName'";
         $resultSet = $this->conn->query($userNameSQL);
         if ($resultSet->num_rows > 0) {
-            exit("User Name has been used, please change another<br>");
+            
+//             echo "<script>alert(\"the name has been used!\");</script>";
+            
+//             echo "<script type='text/javascript'>";
+//             echo "window.location.href='../window/register.html'";
+//             echo "</script>";
+            
+            
+            
+            
+//             session_start();
+//             $value="false";
+//             setcookie("ifDuplicate",$value,time()+0.5);
+//             $_SESSION['ifDuplicate'] = $value;
+            
+            
+            $hint="false";
+            $responce=$hint;
+//             echo($responce);
+            return $responce;
+//             exit();
+
         }
 
         // $myPictureName = $_FILES['myPicture']['name'];
@@ -257,6 +284,7 @@ class DBController
         return $resultList;
     }
 
+
     // find all record of current user
     // function getRecordsByID($userID){
     // $stmt = "select * from record where name = '$userID'";
@@ -288,18 +316,36 @@ class DBController
 
         return $resultList;
     }
-
+    
+    
+    
+    //check the name of the user
+//     function searchName(){
+//         $stmt = "select name from user";
+//         $result = $this->conn->query($stmt);
+//         $resultList = array();
+//         $num = 0;
+//         while ($row = $result->fetch_array()) {
+            
+//             $resultList[$num] = $row;
+//             $num = $num + 1;
+//         }
+//         return $resultList;
+//     }
+    
+    
+    
     // return page number
-    function getPageNum()
-    {
-        $stmt = "select count(*) as recordNum from landscapecollector.record";
+//     function getPageNum()
+//     {
+//         $stmt = "select count(*) as recordNum from landscapecollector.record";
 
-        $result = $this->conn->query($stmt);
-        $row = $result->fetch_array();
-        $pageNum = ceil($row['recordNum'] / 6);
+//         $result = $this->conn->query($stmt);
+//         $row = $result->fetch_array();
+//         $pageNum = ceil($row['recordNum'] / 6);
 
-        return $pageNum;
-    }
+//         return $pageNum;
+//     }
 
     
     //eidt the records
@@ -378,17 +424,18 @@ class DBController
         // check the user name exist or not
         $userNameSQL = "select * from user where name='$userName'";
         $resultSet = $this->conn->query($userNameSQL);
+        
         if ($resultSet->num_rows > 0) {
             exit("User Name has been used, please change another<br>");
         }
         
-       
+
         // insert data
         $stmt = $this->conn->prepare("INSERT INTO user (name,password, image) VALUES(?, ?, ?)");
         $stmt->bind_param("sss", $userName, $passwordMD5, $myPictureName);
         
 
-            session_start();
+        session_start();
             $_SESSION['userName'] = $userName;
             
             $stmt->execute();
@@ -417,6 +464,20 @@ class DBController
         if (mysqli_query($this->conn, $stmt)) {
             echo "create success;<br>";
         }
+    }
+    
+    function verifyUser($name){
+        $stmt = "select * from user where name='$name'";
+        
+        $result = $this->conn->query($stmt);
+        
+        if ($result->num_rows > 0) {
+            return "false";
+        }
+        else{
+            return "true";
+        }
+
     }
     
     

@@ -12,7 +12,7 @@ class RegisterController
     var $db;
 
     var $registerID;
-
+    
     //create a user
     function createUser($name, $password, $confirmPassword, $myPicture)
     {
@@ -61,20 +61,37 @@ class RegisterController
         echo "window.location.href='../window/login.html'";
         echo "</script>";
 
-        // header("Location:../index.html");
+
     }
+
+
 }
+
+
+
 
 $rc = new RegisterController();
 $rc->db = new DBController();
 $rc->db->connect();
 
-if(isset($_POST['userName'])){
-    $rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
+if(isset($_POST['name'])){
+    $name = $_POST['name'];
+    $response = $rc->db->verifyUser($name);
+    if($response=="false"){ // verify fail
+        echo "false";   
+        exit();
+    }
+
 }
 
+if(isset($_POST['userName'])){
+    $response = $rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
+}
 
-// $rc->displayUserInfo($rc->registerID);
+if($response =='false'){
+    echo "false";
+}
+
 
 $rc->db->disconnect();
 
