@@ -17,12 +17,50 @@ function check(){
 			if(data=='false'){
 				
 				document.getElementById("hint1").innerHTML="<font color='red'>The name has been used.\n</font>";
+				error="false";
 
 			}
 		
 		}
 	});
 
+	
+	
+	var select = document.getElementById('headPicture').value;
+	
+    if(select=='') {
+        var con=confirm("You did not upload a image. Do you want to use the default user image?");
+        if(con==true){
+        	
+        }
+        else{
+        	return false;
+        }
+    }
+    else {
+		var fileId="headPicture";
+		var img=document.getElementById(fileId);
+		var imgSize=img.files[0].size;
+		var size=imgSize/1024;
+		
+		if(size>200000){
+			document.getElementById("hint3").innerHTML="<font color='red'>The picture need to smaller than 200M.\n</font>";
+			error="false";
+		}
+		else{
+	        var con2=confirm("are you sure to use the picture?");
+	        if(con2==true){
+	        	
+	        }
+	        else{
+	        	return false;
+	        }
+		}
+    }
+
+
+	
+	
 	var str=form.password.value;
 	var str2=form.confirmPassword.value;
 	
@@ -45,35 +83,9 @@ function check(){
 		}
 	
 	
-	var select = document.getElementById('headPicture').value;
-	
-	    if(select=='') {
-	        var con=confirm("You did not upload a image. Do you want to use the default user image?");
-	        if(con==true){
-	        	
-	        }
-	        else{
-	        	return false;
-	        }
-	    }
-	    else {
-			var fileId="headPicture";
-			var img=document.getElementById(fileId);
-			var imgSize=img.files[0].size;
-			var size=imgSize/1024;
-			
-			if(size>200000){
-				document.getElementById("hint3").innerHTML="<font color='red'>The picture need to smaller than 200M.\n</font>";
-				error="false";
-			}
-	    }
-   
-	
+
 	if (error != "") {
-//
-//		var errorText = "Your problem is:\n";
-//		errorText = errorText + error;
-//		window.alert(errorText);
+
 		return false;
 		}
 }
