@@ -1,4 +1,5 @@
 function check(){
+	alert("aaa");
 	var form=document.forms[0];
 	var error="";
 	var country=form.create_country.value;

@@ -58,12 +58,15 @@ if (! isset($_SESSION['userName'])) {
 
 	<div id="content">
 
-		<h1>Share your Landscape!</h1>
+		<div id="backDiv">
+				<i class="fa fa-arrow-circle-left fa-lg" id="back" class="createBack" style="cursor:pointer" onclick=back()></i>
+				<h3 id = "createTitle">Share your Landscape!</h3>
+			</div>
+
+		
 
 		<div id="main">
-			<div id="backDiv">
-				<i class="fa fa-arrow-circle-left fa-lg" id="back" onclick=back()></i>
-			</div>
+			
 
 
 			<form method="post" action="../controller/RecordController.php"

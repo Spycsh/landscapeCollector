@@ -9,6 +9,7 @@
 #backDiv{
     height: 30px;
     /* height: 40px; */
+    
 }
 
 #caption{
@@ -93,6 +94,8 @@ body #main{
     font-size: 30px;
     width: 300px;
 } */
+
+
 
 #logout{
     height: 30px;
@@ -207,3 +210,16 @@ header{
     background-size: 100%;
 }
 
+.createBack{
+	display:inline-block;
+	vertical-align:middle;
+	line-height:30px;
+	
+}
+
+#createTitle{
+	display:inline-block;
+	vertical-align:middle;
+	line-height:30px;
+	margin-left:50px;
+}

@@ -108,12 +108,12 @@
     echo "<img src=$userProfileURL class='recordProfile'></img>";
     echo "<p class = 'curUserName'>" . $curUser['name'] . "</p>";
     
-    echo "<i class='fa fa-arrow-circle-left fa-lg' id='back' onclick=back() aria-hidden='true'></i>";
+    echo "<i class='fa fa-arrow-circle-left fa-lg' style='cursor:pointer' id='back' onclick=back() aria-hidden='true'></i>";
 
     //only if the author of the record equals to the current user, then user can edit or delete
     if ($curID == $_SESSION['userID']) {
-        echo "<i class='fa fa-edit fa-lg' id = 'edit' onclick = editRecord()></i>";
-        echo "<i class='fa fa-trash fa-lg' id = 'delete' onclick = deleteRecord($recordID)></i>";
+        echo "<i class='fa fa-edit fa-lg' style='cursor:pointer' id = 'edit' onclick = editRecord()></i>";
+        echo "<i class='fa fa-trash fa-lg' style='cursor:pointer' id = 'delete' onclick = deleteRecord($recordID)></i>";
     }
 
     ?>

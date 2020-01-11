@@ -1,5 +1,4 @@
 function check(){
-
 	var form=document.forms[0];
 	var error="";
 	document.getElementById("hint").innerHTML="";
@@ -10,15 +9,17 @@ function check(){
 	var name=form.userName.value;
 	$.ajax({
 		type:"post",
-		url:'../controller/registerController.php',
+		url:'../controller/RegisterController.php',
+		async:false,	//must be set since the variable error will never change to "false" because ajax is default asynchronize
 	    data: {"name":name},
 	    dataType: 'text',
 		success:function(data){
 			if(data=='false'){
 				
 				document.getElementById("hint1").innerHTML="<font color='red'>The name has been used.\n</font>";
+	    		document.body.scrollTop = 0;
 				error="false";
-
+				
 			}
 		
 		}
@@ -45,6 +46,7 @@ function check(){
 		
 		if(size>200000){
 			document.getElementById("hint3").innerHTML="<font color='red'>The picture need to smaller than 200M.\n</font>";
+    		document.body.scrollTop = 0;
 			error="false";
 		}
 		else{
@@ -69,6 +71,7 @@ function check(){
 	}
 	else{
 		document.getElementById("hint2").innerHTML="<font color='red'>The passwords are not the same.\n</font>";
+		document.body.scrollTop = 0;
 		return false;
 	}
 	
@@ -78,14 +81,14 @@ function check(){
 		document.getElementById("hint").innerHTML="<font color='red'>The password does not comply with the standard.\n</font>";
 		document.getElementById("hint2").innerHTML="<font color='red'>The password does not comply with the standard.\n</font>";
 		document.getElementById("password").value="";
-		document.getElementById("confirmPassword").value="";	
+		document.getElementById("confirmPassword").value="";
+		document.body.scrollTop = 0;
 		error="false";
 		}
 	
-	
 
 	if (error != "") {
-
+		alert("22");
 		return false;
 		}
 }

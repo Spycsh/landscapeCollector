@@ -80,7 +80,7 @@ $record = $rc->selectRecord($recordID);
 		<div id="main">
 
 			<div id="backDiv">
-				<i class="fa fa-arrow-circle-left fa-lg" id="back" onclick=backToShowRecordWindow()></i>
+				<i class="fa fa-arrow-circle-left fa-lg" style='cursor:pointer' id="back" onclick=backToShowRecordWindow()></i>
 			</div>
 
 			<form method="post" action="../controller/RecordController.php"
