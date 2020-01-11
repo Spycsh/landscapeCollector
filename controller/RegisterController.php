@@ -74,6 +74,8 @@ $rc = new RegisterController();
 $rc->db = new DBController();
 $rc->db->connect();
 
+
+// ajax
 if(isset($_POST['name'])){
     $name = $_POST['name'];
     $response = $rc->db->verifyUser($name);
@@ -84,13 +86,14 @@ if(isset($_POST['name'])){
 
 }
 
+// form post
 if(isset($_POST['userName'])){
     $response = $rc->createUser($_POST["userName"], $_POST["password"], $_POST["confirmPassword"], $_FILES['myPicture']['name']);
 }
 
-if($response =='false'){
-    echo "false";
-}
+// if($response =='false'){
+//     echo "false";
+// }
 
 
 $rc->db->disconnect();
