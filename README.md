@@ -13,7 +13,7 @@ The website can go well on Microsoft Edge, Chrome and also Firefox.
 
 ------------------------------------------------------------
 ## Operating the software
-Activate the eclipse and import the php file.
+Activate the eclipse and import the files.
 The project includes 7 folders:
 controller
 css
@@ -25,9 +25,11 @@ windows
 
 First, you need to open the controller folder and open DBController.php
 
-Find the code in line 6 and change the port with your own information.
+Find the code in line 6 and change the port with your own.
 
-run the Initialization.php
+Please delete the landscapecollector database orginally exists in your database first. Then, it is very important to run our landscapecollector.sql in your database. There should be two tables after your running the file, which are user and record tables.
+
+Run the Initialization.php
 
 open the login.html
 
