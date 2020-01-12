@@ -1,3 +1,5 @@
+//functions for the behavior in the regsiter page
+//if user mouse over on the quesion mark for hint
 function display(){
     document.getElementById("pwdInfoBox").style.display = "block";
 }

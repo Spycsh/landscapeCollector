@@ -1,3 +1,4 @@
+//validation for register window
 function check(){
 	var form=document.forms[0];
 	var error="";
@@ -6,7 +7,6 @@ function check(){
 	document.getElementById("hint2").innerHTML="";
 	document.getElementById("hint3").innerHTML="";
 
-	//vheck if the user name has been used
 	var name=form.userName.value;
 	$.ajax({
 		type:"post",
@@ -27,11 +27,11 @@ function check(){
 	});
 
 	
-	//check if the user have selected a picture
+	
 	var select = document.getElementById('headPicture').value;
 	
     if(select=='') {
-        var con=confirm("You did not upload an image. Do you want to use the default user image?");
+        var con=confirm("You did not upload a image. Do you want to use the default user image?");
         if(con==true){
         	
         }
@@ -40,7 +40,6 @@ function check(){
         }
     }
     else {
-    	// if the picture is uploaded, the size need to be checked
 		var fileId="headPicture";
 		var img=document.getElementById(fileId);
 		var imgSize=img.files[0].size;
@@ -64,7 +63,7 @@ function check(){
 
 
 	
-	//check if the two password is the same
+	
 	var str=form.password.value;
 	var str2=form.confirmPassword.value;
 	
@@ -77,7 +76,7 @@ function check(){
 		return false;
 	}
 	
-	//check if the password is strong cipher
+	
 	if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,10}$/.test(str)){	}
 	else{
 		document.getElementById("hint").innerHTML="<font color='red'>The password does not comply with the standard.\n</font>";
@@ -88,9 +87,9 @@ function check(){
 		error="false";
 		}
 	
-//if there are any problem, the form will not be submitted
+
 	if (error != "") {
-//		alert("22");
+		alert("22");
 		return false;
 		}
 }
