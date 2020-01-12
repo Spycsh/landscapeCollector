@@ -1,5 +1,8 @@
 //send information to the search controller by ajax
 function searchByPage(pageNum=1){
+    // set the back button visible
+    document.getElementById("backBtn").style.display = "inline";
+
     var keyword = document.getElementById("inputBox").value;
     // alert(pageNum);
     $.ajax({

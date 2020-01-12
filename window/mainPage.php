@@ -82,7 +82,12 @@
 		<button class="addBtn"
 			onclick="location.href='../window/createRecordWindow.php'">
 			<i class="fa fa-plus"></i>
-		</button>
+        </button>
+
+        <button id="backBtn"
+            onclick=back()>
+            <i class="fa fa-arrow-circle-left fa-lg" style="cursor:pointer"></i>
+        </button>
 	</div>
 
 	<main id="main">
@@ -108,8 +113,8 @@
             <!-- <script>changePage(1);</script> -->
 
 		<li class="post-item grid-item"><a class="post-link">
-				<div class="recordImage"
-					style="background-image: url(../css/img/1.jpg);"></div>
+				<!-- <div class="recordImage"
+					style="background-image: url(../css/img/1.jpg);"></div> -->
 				<article>
 					<h1>name,recommend</h1>
 					<!-- <p>user image,name</p> -->
