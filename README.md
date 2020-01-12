@@ -6,6 +6,7 @@ The users can upload the beautiful landscape images where they visited or lived 
 Users can also choose to what extent they recommend the landscape when creating one record. 
 Users can read others' records and landscapes, but they can only edit or delete their own records. 
 It is also possible for users to search landscape records by country, city or user name who created the record. 
+
 ------------------------------------------------------------
 ## Operating environment
 The website can go well on Microsoft Edge, Chrome and also Firefox.
