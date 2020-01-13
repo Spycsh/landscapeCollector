@@ -14,24 +14,90 @@ The website can go well on Microsoft Edge, Chrome and also Firefox.
 ------------------------------------------------------------
 ## Operating the software
 Activate the eclipse and import the files.
-The project includes 7 folders:
-controller
-css
-fonts
-js
-model
-uploads
-windows
+The project hierarchy:
 
-First, you need to open the controller folder and open DBController.php
+```
++--controller
+|    +--ChangePageController.php
+|    +--DBController.php
+|    +--login_process.php
+|    +--logout.php
+|    +--RecordController.php
+|    +--RegisterController.php
+|    +--SearchController.php
++--css
+|    +--CreateRecordWindow.css
+|    +--font-awesome.min.css
+|    +--img
+|    |    +--informationBtn.png
+|    |    +--logo.png
+|    |    +--logout.png
+|    |    +--star-off.png
+|    |    +--star-on.png
+|    |    +--starOff20.png
+|    |    +--starOn20.png
+|    +--login.css
+|    +--main.css
+|    +--mainPage.css
+|    +--register.css
+|    +--ShowRecordWindow.css
+|    +--star-off.png
+|    +--star-on.png
+|    +--style.css
++--fonts
+|    +--fontawesome-webfont.woff2
++--Initialization.php
++--js
+|    +--back.js
+|    +--changePage.js
+|    +--createValidation.js
+|    +--deleteRecord.js
+|    +--editRecord.js
+|    +--editValidation.js
+|    +--jquery.min.js
+|    +--registerTip.js
+|    +--registerValidation.js
+|    +--search.js
+|    +--showRecord.js
++--model
+|    +--Record.php
+|    +--User.php
++--uploads
+|    +--RecordImage
+|    |    +--Berlin.jpg
+|    |    +--Fussen.jpg
+|    |    +--hamburg-church.jpg
+|    |    +--...
+|    +--userProfile
+|    |    +--admin.jpg
+|    |    +--default.jpg
++--window
+|    +--CreateRecordWindow.php
+|    +--EditRecordWindow.php
+|    +--login.html
+|    +--mainPage.php
+|    +--register.html
+|    +--ShowRecordWindow.php
+```
 
-Find the code in line 6 and change the port with your own.
+1. First, you need to open the controller folder and open DBController.php
 
-Please delete the landscapecollector database orginally exists in your database first. Then, it is very important to run our landscapecollector.sql in your database. There should be two tables after your running the file, which are user and record tables.
+2. Find the code in line 6 and change the port with your own.
 
-Run the Initialization.php
+```
+    // remember to change the port number!
+    var $servername = "127.0.0.1:3307";
+```
 
-open the login.html
+3. Please delete the landscapecollector database orginally exists in your database first. Then, it is very important to run our landscapecollector.sql in your database. There should be two tables after your running the file, which are user and record tables.
+
+4. Run the Initialization.php with your port
+
+```
+http://localhost:8181/Assignment3/LandscapeCollector/Initialization.php
+```
+
+5. open the login.html
 
 ------------------------------------------------------------
 ## Change log
